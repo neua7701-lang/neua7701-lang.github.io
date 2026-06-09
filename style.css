@@ -1,0 +1,111 @@
+/* 1. ตั้งค่าพื้นฐานของหน้าเว็บ */
+
+body {
+    font-family: Arial, sans-serif; /* ตั้งค่าฟอนต์หลัก */
+    line-height: 1.6; /* ระยะห่างระหว่างบรรทัด */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* สีพื้นหลัง */
+    color: #333; /* สีตัวอักษร */
+}
+
+/* 2. ส่วนหัวเว็บไซต์ */
+
+header {
+    background: #4CAF50; /* สีพื้นหลังส่วนหัว */
+    color: white; /* สีข้อความ */
+    padding: 20px 0; /* ระยะห่างบนล่าง */
+    text-align: center; /* จัดกึ่งกลาง */
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+/* 3. ส่วนเนื้อหา */
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px; /* ความกว้างสูงสุด */
+    background: white;
+    border-radius: 8px; /* มุมโค้ง */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* เงา */
+}
+
+/* 4. หัวข้อ */
+
+h2 {
+    color: #4CAF50;
+}
+
+/* 5. ส่วนแสดงโปรเจกต์ */
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+/* 6. รายการทักษะ */
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* 7. ส่วนท้ายเว็บไซต์ */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 8. รองรับมือถือ */
+
+@media (max-width: 768px) {
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+ul {
+    list-style-type: square; /* ใช้จุดสี่เหลี่ยมแทนจุดกลม */
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333; /* สีพื้นหลังเข้ม */
+    color: white;
+    margin-top: 20px;
+}
