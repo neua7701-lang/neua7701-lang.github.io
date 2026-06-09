@@ -1,61 +1,79 @@
-/* 1. การตั้งค่าทั่วไปของหน้าเว็บ (body) */
-body {
+/* ==========================================================================
+   1. จัดระเบียบหน้าเว็บให้อยู่กึ่งกลางทั้งหมด (ล้างระเบิดซ้าย)
+   ========================================================================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f4f4f4;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 20px 0; /* เพิ่ม padding บน-ล่าง ให้หน้าเว็บดูมีพื้นที่หายใจ */
-    background-color: #f4f4f4;
     color: #333;
-    
-    /* ช่วยดักจัดกึ่งกลางสำหรับเบราว์เซอร์บางรุ่น */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* 2. ส่วนหัว (header) */
+/* ใช้ Flexbox บังคับให้ลูกทุกตัว (header, section, footer) มาอยู่ตรงกลางหน้าจอ */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 40px 0;
+}
+
+/* ==========================================================================
+   2. กำหนดขนาดกล่องให้เท่ากันทุกใบ (กว้างสูงสุด 800px)
+   ========================================================================== */
+header, section, footer {
+    box-sizing: border-box;
+    width: 90%;          /* ยืดหยุ่นตามหน้าจอมือถือ */
+    max-width: 800px;    /* ล็อคความกว้างบนคอมพิวเตอร์ให้เท่ากันทุกกล่อง */
+    margin-bottom: 20px; /* เว้นระยะห่างระหว่างกล่องด้านล่าง */
+}
+
+/* ==========================================================================
+   3. ตกแต่งความสวยงามรายชิ้น
+   ========================================================================== */
+
+/* ส่วนหัว (header) */
 header {
     background: #4CAF50;
     color: white;
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
-    border-radius: 8px 8px 0 0; /* ทำมุมมนด้านบนให้เข้ากับกล่องเนื้อหา */
-    margin: 0 auto 20px auto; /* จัดกึ่งกลางและเว้นระยะห่างจากกล่องล่าง */
-    max-width: 800px;
-    width: 90px;
-    box-sizing: border-box;
+    border-radius: 8px; /* ปรับให้มนเท่ากันทุกกล่อง */
 }
 
 header h1 {
-    margin: 0;
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
 }
 
 header p {
-    margin: 5px 0 0;
+    margin: 0;
+    opacity: 0.9;
 }
 
-/* 3. ส่วนเนื้อหา (section) */
+/* กล่องเนื้อหาหลัก (section) */
 section {
-    box-sizing: border-box;
     padding: 30px;
-    margin: 0 auto 20px auto; /* จัดให้อยู่กึ่งกลางหน้าจอเสมอ */
-    max-width: 800px;  
-    width: 90%;        
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* 4. หัวข้อ (h2) */
+/* หัวข้อข้างในกล่อง */
 h2 {
     color: #4CAF50;
     margin-top: 0;
     margin-bottom: 20px;
 }
 
-/* 5. ส่วนแสดงโปรเจกต์ (.project) */
+/* ส่วนแสดงรายละเอียดโปรเจกต์ */
 .project {
     margin-bottom: 20px;
+}
+
+.project:last-child {
+    margin-bottom: 0;
 }
 
 .project h3 {
@@ -63,7 +81,7 @@ h2 {
     color: #333;
 }
 
-/* 6. รายการทักษะ (ul) */
+/* รายการทักษะ (ul) */
 ul {
     list-style-type: square;
     padding-left: 20px;
@@ -74,22 +92,23 @@ ul li {
     margin-bottom: 8px;
 }
 
-/* 7. ส่วนท้าย (footer) */
+/* ส่วนท้าย (footer) */
 footer {
-    box-sizing: border-box;
     text-align: center;
-    padding: 20px;
+    padding: 25px 20px;
     background: #333;
     color: white;
-    border-radius: 0 0 8px 8px; /* ทำมุมมนด้านล่าง */
-    margin: 0 auto; /* จัดกึ่งกลางหน้าจอ */
-    max-width: 800px;
-    width: 90%;
+    border-radius: 8px;
+}
+
+footer p {
+    margin: 5px 0;
 }
 
 footer a {
     color: #4CAF50;
     text-decoration: none;
+    font-weight: bold;
 }
 
 footer a:hover {
