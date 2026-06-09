@@ -1,65 +1,98 @@
-/* 1. การตั้งค่าทั่วไปของหน้าเว็บ (body) */
+<body>
+
+  <header>
+    <h1>พอร์ตโฟลิโอของฉัน</h1>
+    <p>ยินดีต้อนรับสู่เว็บไซต์ของผม</p>
+  </header>
+
+  <section>
+    <h2>เกี่ยวกับฉัน</h2>
+    <p>ความภาคภูมิใจในผลงานของตนเองทำให้มีความพอใจในการสร้างสรรค์สิ่งใหม่ ๆ ผมภูมิใจในผลงานและทักษะที่ผมได้พัฒนามาอย่างต่อเนื่อง</p>
+  </section>
+
+  <section>
+    <h2>ผลงานของผม</h2>
+    
+    <div class="project">
+      <h3>เว็บไซต์ Portfolio</h3>
+      <p>เว็บไซต์นี้เป็นหนึ่งในผลงานที่ผมสร้างขึ้นเพื่อแสดงความสามารถของผม</p>
+    </div>
+    
+    <div class="project">
+      <h3>งานออกแบบสื่อเพื่อการศึกษา</h3>
+      <p>ออกแบบสื่อการเรียนรู้ด้วย Canva และเครื่องมือดิจิทัลต่าง ๆ</p>
+    </div>
+    
+    <div class="project">
+      <p>ผมมีไฟล์เด่นที่ช่วยให้ผู้อื่นจัดการงานได้อย่างมีประสิทธิภาพ</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>ทักษะของผม</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Python, Django</li>
+      <li>Git และ GitHub</li>
+      <li>การออกแบบ UI/UX</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 SOMCHAI. All rights reserved.</p>
+  </footer>
+
+</body>
+2. ไฟล์ CSS (ปรับแต่งให้กล่องตรงกันและสมดุล)
+เพื่อให้กล่อง <section> ทุกกล่องมีขนาดเท่ากัน จัดอยู่ตรงกลางหน้าจอ และดูสะอาดตา ให้ใช้ CSS ชุดนี้ครับ (สามารถใช้ร่วมกับโค้ดเดิมที่เคยรวมไว้ได้เลย):
+
+CSS
+/* การตั้งค่าพื้นหลังและฟอนต์ */
 body {
-    font-family: Arial, sans-serif; /* ตั้งค่าฟอนต์หลัก */
-    line-height: 1.6; /* ระยะห่างระหว่างบรรทัดเพื่อให้ง่ายต่อการอ่าน */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* สีพื้นหลังของเว็บ */
-    color: #333; /* สีตัวอักษรหลัก */
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* 2. ส่วนหัว (header) */
-header {
-    background: #4CAF50; /* สีพื้นหลังของส่วนหัว */
-    color: white; /* สีข้อความ */
-    padding: 20px 0; /* ระยะห่างด้านบนและล่าง */
-    text-align: center; /* จัดข้อความกึ่งกลาง */
-}
-
-header h1 {
-    margin: 0;
-}
-
-header p {
-    margin: 5px 0 0; /* ตั้งค่าระยะห่างของข้อความรอง */
-}
-
-/* 3. ส่วนเนื้อหา (section) */
+/* จัดการกล่องเนื้อหาให้อยู่ตรงกลางและกว้างเท่ากันทุกกล่อง */
 section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px; /* จำกัดความกว้างของเนื้อหา */
-    background: white; /* พื้นหลังสีขาว */
-    border-radius: 8px; /* ทำให้ขอบมน */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเบา ๆ */
+    box-sizing: border-box; /* ป้องกันกล่องขยายเกินขนาด */
+    padding: 30px;
+    margin: 20px auto; /* จัดให้อยู่กึ่งกลางหน้าจอเสมอ */
+    max-width: 800px;  /* ความกว้างสูงสุดของกล่อง */
+    width: 90%;        /* รองรับการแสดงผลบนมือถือ */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* เงาละมุนขึ้น */
 }
 
-/* 4. หัวข้อ (h2) */
+/* หัวข้อสีเขียวตามรูปภาพของคุณ */
 h2 {
-    color: #4CAF50; /* สีของหัวข้อ */
+    color: #4CAF50;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-/* 5. ส่วนแสดงโปรเจกต์ (.project) */
+/* ส่วนแสดงรายละเอียดโปรเจกต์ย่อย */
 .project {
     margin-bottom: 20px;
 }
 
 .project h3 {
-    margin: 0 0 10px;
+    margin: 0 0 5px 0;
     color: #333;
 }
 
-/* 6. รายการทักษะ (ul) */
+/* จัดรูปแบบรายการทักษะ */
 ul {
-    list-style-type: square; /* ใช้จุดสี่เหลี่ยมแทนจุดกลม */
+    list-style-type: square;
     padding-left: 20px;
+    margin: 0;
 }
 
-/* 7. ส่วนท้าย (footer) */
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #333; /* สีพื้นหลังเข้ม */
-    color: white;
-    margin-top: 20px;
+ul li {
+    margin-bottom: 8px;
 }
